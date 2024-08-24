@@ -1,0 +1,42 @@
+<div class="general container">
+  <div class="general header block">Test Web Socket</div>
+
+  <div>
+    <button
+      class="border-config distance margin-dist connect-button"
+      (click)="connect()"
+    >
+      Connect
+    </button>
+    <button
+      class="border-config distance margin-dist disconnect-button"
+      (click)="disconnect()"
+    >
+      Disconnect
+    </button>
+    <button
+      class="border-config distance margin-dist reset-button"
+      (click)="clear()"
+    >
+      Clear history
+    </button>
+  </div>
+
+  @for(message of messages; track message){
+  <p class="border-config distance">{{ message }}</p>
+  }
+
+  <input
+    [(ngModel)]="inputValue"
+    class="border-config block distance margin-dist"
+    type="text"
+  />
+  <button
+    class="border-config distance margin-dist connect-button"
+    (click)="send()"
+  >
+    SEND
+  </button>
+</div>
+
+<router-outlet />
